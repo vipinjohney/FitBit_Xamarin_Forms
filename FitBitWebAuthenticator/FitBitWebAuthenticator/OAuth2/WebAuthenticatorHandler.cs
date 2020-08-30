@@ -1,10 +1,6 @@
 ﻿using System;
 using Xamarin.Essentials;
 using System.Threading.Tasks;
-using System.Security.Cryptography;
-using System.IdentityModel.Tokens.Jwt;
-using System.Text;
-using System.Linq;
 using FitBitWebAuthenticator.FirBit;
 
 namespace FitBitWebAuthenticator

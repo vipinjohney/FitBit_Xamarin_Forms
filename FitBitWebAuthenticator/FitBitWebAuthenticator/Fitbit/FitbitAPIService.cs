@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 using System.Threading.Tasks;
 using FitBitWebAuthenticator.Models;
 using Newtonsoft.Json;
@@ -53,40 +52,37 @@ namespace FitBitWebAuthenticator.FirBit
             return tokenDetails;
         }
 
-        public async Task FetchUserProfileAsync(string userId, string accessToken)
+        private async Task APIRequestAsync(string requestUri)
         {
-            var requestUri = "https://api.fitbit.com/1/user/-/profile.json";
             var client = new RestClient(requestUri)
             {
                 Timeout = -1
             };
 
+            var _accessToken = FitbitConfiguration.TokenResponse.access_token;
+
             var request = new RestRequest(Method.GET);
 
-            var bearerToken = "Bearer " + accessToken;
+            var bearerToken = "Bearer " + _accessToken;
             request.AddHeader("Authorization", bearerToken);
 
             IRestResponse response = await client.ExecuteAsync(request);
             Console.WriteLine(response.Content);
+        }
+
+        public async Task FetchUserProfileAsync()
+        {
+            var requestUri = "https://api.fitbit.com/1/user/-/profile.json";
+
+            APIRequestAsync(requestUri);
 
         }
 
-        public async Task FetchUserActivityForDateAsync(string userId, string date, string accessToken)
+        public async Task FetchUserActivityForDateAsync(string userId, string date)
         {
             var requestUri = "https://api.fitbit.com/1/user/" + userId + "/activities/date/" + date + ".json";
-            var client = new RestClient(requestUri)
-            {
-                Timeout = -1
-            };
 
-            var request = new RestRequest(Method.GET);
-
-            var bearerToken = "Bearer " + accessToken;
-            request.AddHeader("Authorization", bearerToken);
-
-            IRestResponse response = await client.ExecuteAsync(request);
-            Console.WriteLine(response.Content);
-
+            APIRequestAsync(requestUri);
         }
     }
 }
