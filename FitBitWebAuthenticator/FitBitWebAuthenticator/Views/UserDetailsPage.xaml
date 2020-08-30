@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FitBitWebAuthenticator.Views.UserDetailsPage"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    BackgroundColor="#2196F3"
+    ios:Page.UseSafeArea="true" >
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24"
+               HasShadow="False" CornerRadius="0">
+            <Label Text="Link Fitbit Account" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" />
+        </Frame>
+        <Button HeightRequest="40" Margin="20,150,20,0"
+                BackgroundColor="White" TextColor="#2196F3" FontSize="Medium" FontAttributes="Bold"
+                Text="Log Out"
+                HorizontalOptions="FillAndExpand" VerticalOptions="End" Clicked="Logout_Button_Clicked" ></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
