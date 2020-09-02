@@ -9,7 +9,7 @@ namespace FitBitWebAuthenticator.FirBit
         public const string ClientSecret = "{client_secret}";
 
         public const string Callback = "com.vipxam.webauthenticator-12345://callback";
-        public const string CallbackExcaped = "com.vipxam.webauthenticator-12345%3A%2F%2Fcallback";
+        public const string CallbackEscaped = "com.vipxam.webauthenticator-12345%3A%2F%2Fcallback";
 
         public const string CallbackScheme = "com.vipxam.webauthenticator-12345";
         public const string Auth2Url = "https://www.fitbit.com/oauth2/authorize?";
