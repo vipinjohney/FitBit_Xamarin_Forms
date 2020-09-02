@@ -23,7 +23,6 @@ namespace FitBitWebAuthenticator.FirBit
                 var request = new RestRequest(Method.POST);
                 request.AddHeader("Authorization", _authorization);
                 request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
-                request.AddHeader("Cookie", "fct=8e529a22b6a5417b8e8c92475db5e299; JSESSIONID=90CD2ACFDE7B41D2056253926C828D66.fitbit1");
                 request.AddParameter("grant_type", FitbitConfiguration.GrantType);
                 request.AddParameter("clientId", FitbitConfiguration.ClientId);
                 request.AddParameter("redirect_uri", FitbitConfiguration.Callback);
