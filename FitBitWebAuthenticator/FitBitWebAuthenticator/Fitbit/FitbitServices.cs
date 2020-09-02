@@ -10,7 +10,7 @@ namespace FitBitWebAuthenticator.FirBit
             return $"{FitbitConfiguration.Auth2Url}" +
                 $"response_type=code" +
                 $"&client_id={FitbitConfiguration.ClientId}" +
-                $"&redirect_uri={FitbitConfiguration.CallbackExcaped}" +
+                $"&redirect_uri={FitbitConfiguration.CallbackEscaped}" +
                 $"&scope={FitbitConfiguration.ScopesEscaped}" +
                 $"&expires_in={FitbitConfiguration.ExpireIn}";
         }
